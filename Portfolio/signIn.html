@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@200;300;400;500&family=Roboto:wght@500&display=swap');
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+        * {
+        	box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+        	background-color: #ca7300;
+	        font-family: 'Montserrat', sans-serif;
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        min-height: 100vh;
+	        margin: 0;
+        }
+
+        .container {
+        	background-color: #fff;
+        	border-radius: 20px 20px 20px;
+        	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        	overflow: hidden;
+        	width: 600px;
+        	max-width: 100%;
+            }
+
+        .header {
+        	border-bottom: 1px solid #f0f0f0;
+        	background-color: #f7f7f7;
+        	padding: 20px 40px;
+        }
+
+        .header h2 {
+	        margin: 0;
+        }
+
+        .form {
+	        padding: 30px 40px;	
+        }
+
+        .form-control {
+	        margin-bottom: 10px;
+        	padding-bottom: 20px;
+            position: relative;
+        }
+
+        .form-control label {
+            display: inline-block;
+	        margin-bottom: 5px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .form-control input{
+            border: 2px solid whitesmoke;
+            border-radius: 6px;
+            display: block;
+            font-family: inherit;
+            font-size: 13px;
+            color: rgb(65, 65, 65);
+            padding: 10px;
+            width: 100%;
+        }
+        .form-control input:focus{
+            outline: 0;
+            border-color: lightpink ;
+        }
+
+        .form-control.success input{
+            border-color: lawngreen;
+        }
+            
+        .form-control.error input{
+            border-color: indianred;
+        }
+
+        .form-control i{
+            visibility: hidden;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
+
+        .form-control.success i.fa-check-circle{
+                color: green;
+            visibility: visible;
+        }
+
+        .form-control.error i.fa-exclamation-circle{
+            color: brown;
+            visibility: visible;
+        }
+
+        .form-control small{
+            color: brown;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+
+        .form-control.error small{
+            visibility: visible;
+        }
+            
+        .form button{
+            border-radius: 7px;
+            font-size: 15px;
+            color: whitesmoke;
+            font-family: 'Montserrat',sans-serif;
+            padding: 10px;
+            margin-top: 20px;
+            width: 190px;
+            margin-left: 33px;
+            margin-right: 33px;
+            text-align: center;
+        }
+
+        .form button:hover{
+            border-radius: 7px;
+            font-size: 15px;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: 'Montserrat',sans-serif;
+            width: 190px;
+            margin-left: 33px;
+            margin-right: 33px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .form .sub{
+            background-color: #508100;
+            border:2px solid #508100;
+            color: whitesmoke;
+        }
+        .form .sub:hover{
+            background: none;
+            border:2px solid #508100;
+            color: #508100;
+        }
+        .form .sub a{
+            color: whitesmoke;
+        }
+        .form .sub a:hover{
+            color: #508100;
+        }
+        .form .re{
+            background-color: #005281;
+            border:2px solid #005281;
+        }
+        .form .re:hover{
+            background: none;
+            border:2px solid #005281;
+            color: #005281;
+        }
+
+        .form .content{
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form .content input{
+            cursor: pointer;
+        }
+
+
+        @media screen and (max-width:500px){
+            .social-panel-container.visible{
+                transform: translateX(0px);
+            }
+            .floating-btn{
+                right:10px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <h2>Sign In</h2>
+            </div>
+
+            <form id="form" class="form" name="Googleform" method="POST" action="index.html">
+
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter username" id="username" name="Name" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="Email">Email</label>
+                    <input type="email" placeholder="Enter email" id="email" name="Email"required>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter password" id="password" name="Password" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" placeholder="Enter password" id="password2" name="2Password" required>
+                </div>
+
+                <div class="content">
+                    <input type="checkbox"> <label>Remember Me</label>
+                    <p>By signing in you are agreeing to our <a href="#">Terms and conditions</a>.</p>
+                </div>
+
+                <button type="submit" class="sub">SignIn</button>
+                <button type="reset" class="re">Reset</button>
+            </form>
+        </div>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwMcZqZ_JLxJ0Qtl9isdXIaukGZVreOSmAIr5qMD-vEt3hkTn9dIyocGSxKKiEA4S-m-w/exec'
+            const form = document.forms['Googleform']
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            })
+        </script> 
+    </body>
+</html>
